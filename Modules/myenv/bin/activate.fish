@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/fade/Desktop/GitHub/MyComputerHelper/myenv"
+set -gx VIRTUAL_ENV "/home/fade/Desktop/GitHub/MyComputerHelper/Modules/myenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

@@ -1,4 +1,4 @@
-#!/home/fade/Desktop/GitHub/MyComputerHelper/myenv/bin/python
+#!/home/fade/Desktop/GitHub/MyComputerHelper/Modules/myenv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
