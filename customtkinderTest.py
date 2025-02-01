@@ -94,7 +94,7 @@ class MyCheckboxFrame(customtkinter.CTkScrollableFrame):
             if checkbox.get() == 1:
                 checked.append(checkbox.cget('text'))
         return checked
-    
+
 class MyRadioButtonFrame(customtkinter.CTkFrame):
     def __init__(self, master, title, values):
         super().__init__(master)
