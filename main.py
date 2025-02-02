@@ -1,6 +1,6 @@
-from Modules import Layout
+from Modules import MainTemp
 
 
 if __name__ == '__main__':
-    app = Layout.App()
+    app = MainTemp.App()
     app.mainloop() 

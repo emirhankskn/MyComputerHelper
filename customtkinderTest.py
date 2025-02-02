@@ -153,3 +153,4 @@ customtkinter.set_widget_scaling(1.2)
 customtkinter.set_window_scaling(1.2)
 app = App()
 app.mainloop()
+
