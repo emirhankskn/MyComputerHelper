@@ -1,11 +1,11 @@
 import customtkinter as ctk
-from Modules.MenuTemps import MenuFrame1
+from Modules.MenuTemps import VideoDownloader
 
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title('Modular Window')
-        self.geometry('960x540')
+        self.title('Computer Tools by Keskin')
+        self.geometry('600x410')
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
@@ -15,11 +15,11 @@ class App(ctk.CTk):
 class MainFrame(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
-        self.grid_columnconfigure(1, weight=1)  # Ana içerik alanına daha fazla alan ver
+        self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
         self.button_panel = ButtonPanel(self, 6, self.switch_content)
-        self.button_panel.grid(row=0, column=0, sticky='ns')  # Dikeyde genişlesin
+        self.button_panel.grid(row=0, column=0, sticky='ns')
         
         self.content_area = ContentArea(self)
         self.content_area.grid(row=0, column=1, sticky='nsew', padx=5, pady=5)
@@ -32,8 +32,8 @@ class ButtonPanel(ctk.CTkFrame):
         super().__init__(master)
         self.count = count
         self.switch_frame = switch_callback
-        self.grid_rowconfigure(tuple(range(count)), weight=1)  # Tüm satırlara eşit dağılım
-        self.grid_columnconfigure(0, weight=1)  # Tek sütunu genişlet
+        self.grid_rowconfigure(tuple(range(count)), weight=1)
+        self.grid_columnconfigure(0, weight=1)
         self.create_buttons()
         
     def create_buttons(self):
@@ -45,7 +45,8 @@ class ButtonPanel(ctk.CTkFrame):
                 command=lambda idx=i: self.switch_frame(idx),
                 anchor="w"  # Metni sola hizala
             )
-            btn.grid(row=i, column=0, padx=5, pady=2, sticky='nsew')  # Tüm yönlerde genişle
+            btn.grid(row=i, column=0, padx=5, pady=2, sticky='nsew')
+
 
 class ContentArea(ctk.CTkFrame):
     def __init__(self, master):
@@ -53,10 +54,10 @@ class ContentArea(ctk.CTkFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         self.current_menu = None
-        self.menus = [MenuFrame1]
+        self.menus = [VideoDownloader]
 
     def show_menu(self, menu_index):
         if self.current_menu: 
             self.current_menu.destroy()
         self.current_menu = self.menus[menu_index](self)
-        self.current_menu.grid(row=0, column=0, sticky='nsew')  # İçeriği tam kaplatsın
+        self.current_menu.grid(row=0, column=0, sticky='nsew')
