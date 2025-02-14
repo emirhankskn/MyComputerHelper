@@ -1,25 +1,12 @@
 import customtkinter as ctk
-from abc import ABC, abstractmethod
-from pytube import YouTube
 import yt_dlp
-from pydub import AudioSegment
 from PIL import Image
 import requests
 from io import BytesIO
-import os
 import threading
+from Modules import AbstractBase
 
-class BaseMenuFrame(ABC, ctk.CTkFrame):
-    def __init__(self, master):
-        super().__init__(master)
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(1, weight=1)
-        self.create_widgets()
-
-    @abstractmethod
-    def create_widgets(self): pass
-
-class VideoDownloader(BaseMenuFrame):
+class VideoDownloader(AbstractBase.BaseMenuFrame):
     def create_widgets(self):
         self.PADX = 20
         self.PADY = 10

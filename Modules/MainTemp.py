@@ -1,5 +1,6 @@
 import customtkinter as ctk
-from Modules.MenuTemps import VideoDownloader
+from Modules.VideoDownloaderTemp import VideoDownloader
+from Modules.FormatChangerTemp import FormatChanger
 
 class App(ctk.CTk):
     def __init__(self):
@@ -54,7 +55,7 @@ class ContentArea(ctk.CTkFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         self.current_menu = None
-        self.menus = [VideoDownloader]
+        self.menus = [VideoDownloader, FormatChanger]
 
     def show_menu(self, menu_index):
         if self.current_menu: 
